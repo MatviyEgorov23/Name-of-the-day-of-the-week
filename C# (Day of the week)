@@ -1,0 +1,52 @@
+using System;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                Console.Write("Enter the number of the day of the year (1-7): ");
+                int dayNumber;
+                bool isValidInput = int.TryParse(Console.ReadLine(), out dayNumber);
+                string dayName = "";
+
+                if (isValidInput && dayNumber >= 1 && dayNumber <= 7)
+                {
+                    switch (dayNumber)
+                    {
+                        case 1:
+                            dayName = "Monday";
+                            break;
+                        case 2:
+                            dayName = "Tuesday";
+                            break;
+                        case 3:
+                            dayName = "Wednesday";
+                            break;
+                        case 4:
+                            dayName = "Thursday";
+                            break;
+                        case 5:
+                            dayName = "Friday";
+                            break;
+                        case 6:
+                            dayName = "Saturday";
+                            break;
+                        case 7:
+                            dayName = "Sunday";
+                            break;
+                    }
+
+                    Console.WriteLine($"Day {dayNumber} is {dayName}.\n");
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input! Please enter a number between 1 and 7.\n");
+                }
+            }
+        }
+    }
+}
